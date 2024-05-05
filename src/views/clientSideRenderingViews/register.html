@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+<h1>Welcome to URL shortner.</h1> <br>
+<form id="loginForm" action="">
+<label for="fName">First name </label>
+<input type="text" id="fName" required>
+
+<label for="lname">Last name</label>
+<input type="text" id="lName" required><br>
+
+<label for="email">Email</label>
+<input type="text" id="email" required><br>
+
+<label for="password">Enter password</label>
+<input type="password" id="password" required><br>
+<button>Login</button>
+</form>
+<a href="./loginPage.html">Already a user?</a>
+<li id="list">Outputs:</li><br>
+</body>
+<script>
+    const form=document.getElementById('loginForm');
+
+  //  btn.addEventListener();
+  form.addEventListener('submit',async (e)=>{
+
+    e.preventDefault();
+    const firstName=document.getElementById('fName');
+    const lastName=document.getElementById('lName');
+    const userEmail=document.getElementById('email');
+    const password=document.getElementById('password');
+    const list=document.getElementById('list');
+    const data={
+    firstName : firstName.value,
+    lastName : lastName.value,
+    email : userEmail.value,
+    password : password.value
+    }
+   let response= await fetch('http://localhost:1050/register', {
+    method: 'POST',
+    headers: {
+                'Access-Control-Allow-Origin' : '*',
+                'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',   
+                'Content-Type': 'application/json' // Set content type as JSON
+            },
+    body: JSON.stringify(data)
+  });
+    let temp=document.createElement('li');
+
+    response=response.json();
+    response=await response;
+    console.log(response);
+    
+    temp.innerText=response.message;
+    list.appendChild(temp);
+  });
+
+</script>
+</html>

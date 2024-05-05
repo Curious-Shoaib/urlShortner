@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+<h1>Welcome to URL shortner.</h1> <br>
+<h3>Please Log in to continue.</h3>
+<form id="loginForm" action="">
+
+<label for="email">Email</label>
+<input type="text" id="email" required><br>
+
+<label for="password">Enter password</label>
+<input type="password" id="password" required><br>
+<button>Login</button>
+</form>
+<p>Not registered? Register <a href="./register.html">here. </a> </p>
+<li id="list"></li>
+</body>
+<script>
+    const form=document.getElementById('loginForm');
+
+  //  btn.addEventListener();
+  form.addEventListener('submit',async (e)=>{
+
+    e.preventDefault();
+    const userEmail=document.getElementById('email');
+    const password=document.getElementById('password');
+    const list=document.getElementById('list');
+    const data={
+    email : userEmail.value,
+    password : password.value
+    }
+   
+    try{
+        let response= await fetch('http://localhost:1050/login', {
+        method: 'POST',
+        headers: {
+                    'Access-Control-Allow-Origin' : '*',
+                    'Access-Control-Allow-Methods':'POST',   
+                    'Content-Type': 'application/json' // Set content type as JSON
+                },
+        body: JSON.stringify(data)
+    });
+    if(!response.ok)
+    {
+        const response=await response.json();
+        throw new Error("Http error status :"`${response.message}`);
+    }
+
+    const htmlText = await response.text(); // Get the HTML content as text
+
+    // Create a new DocumentFragment (optional)
+    const fragment = document.createDocumentFragment();
+
+    // Parse the HTML string into DOM elements (optional, for better performance)
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(htmlText, 'text/html');
+    const content = doc.querySelector('body').cloneNode(true); // Get the body content
+      // Method 1: Replace entire body content
+    //   document.body.innerHTML = content.innerHTML;
+       // Method 2: Append HTML to existing element (e.g., a container)
+    // const container = document.getElementById('content-container');
+    // container.appendChild(content);
+    const newContent = doc.querySelector('body').cloneNode(true); // Get the body content
+
+    // Replace current page with new content
+    window.history.replaceState({}, "", newContent.outerHTML); // Replace current history entry
+
+
+
+    // response=await response.json();   // response.json() returns a promise , so we need to settle it first
+    //     console.log(response);
+    // const subList=document.createElement('li');
+    // subList.innerText=response.message;
+    // list.appendChild(subList);
+    }
+    catch(error)
+    {
+    const subList=document.createElement('li');
+    subList.innerText=error.message;
+    list.appendChild(subList);
+    }
+  });
+
+</script>
+</html>

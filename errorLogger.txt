@@ -1,0 +1,26 @@
+8:42:30 PM-Incorrect emailId or password - Error: Incorrect emailId or password
+    at userService.getUser (c:\Users\mohd.soyab\Desktop\urlShortner\src\service\userService.js:27:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async c:\Users\mohd.soyab\Desktop\urlShortner\src\routes\userRouter.js:39:21
+8:42:51 PM-Email must be type of @gmail.com - Error: Email must be type of @gmail.com
+    at userService.saveUser (c:\Users\mohd.soyab\Desktop\urlShortner\src\service\userService.js:10:21)
+    at c:\Users\mohd.soyab\Desktop\urlShortner\src\routes\userRouter.js:10:27
+    at Layer.handle [as handle_request] (c:\Users\mohd.soyab\Desktop\urlShortner\node_modules\express\lib\router\layer.js:95:5)
+    at next (c:\Users\mohd.soyab\Desktop\urlShortner\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (c:\Users\mohd.soyab\Desktop\urlShortner\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (c:\Users\mohd.soyab\Desktop\urlShortner\node_modules\express\lib\router\layer.js:95:5)
+    at c:\Users\mohd.soyab\Desktop\urlShortner\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (c:\Users\mohd.soyab\Desktop\urlShortner\node_modules\express\lib\router\index.js:346:12)
+    at next (c:\Users\mohd.soyab\Desktop\urlShortner\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (c:\Users\mohd.soyab\Desktop\urlShortner\node_modules\express\lib\router\index.js:175:3)
+10:16:10 PM-Failed to lookup view "urlPage" in views directory "c:\views" - Error: Failed to lookup view "urlPage" in views directory "c:\views"
+    at Function.render (c:\Users\mohd.soyab\Desktop\urlShortner\node_modules\express\lib\application.js:597:17)
+    at ServerResponse.render (c:\Users\mohd.soyab\Desktop\urlShortner\node_modules\express\lib\response.js:1048:7)
+    at c:\Users\mohd.soyab\Desktop\urlShortner\src\routes\urlRouter.js:8:24
+    at Layer.handle [as handle_request] (c:\Users\mohd.soyab\Desktop\urlShortner\node_modules\express\lib\router\layer.js:95:5)
+    at next (c:\Users\mohd.soyab\Desktop\urlShortner\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (c:\Users\mohd.soyab\Desktop\urlShortner\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (c:\Users\mohd.soyab\Desktop\urlShortner\node_modules\express\lib\router\layer.js:95:5)
+    at c:\Users\mohd.soyab\Desktop\urlShortner\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (c:\Users\mohd.soyab\Desktop\urlShortner\node_modules\express\lib\router\index.js:346:12)
+    at next (c:\Users\mohd.soyab\Desktop\urlShortner\node_modules\express\lib\router\index.js:280:10)

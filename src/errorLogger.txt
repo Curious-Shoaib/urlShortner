@@ -1,0 +1,37 @@
+10:26:59 PM-invalid signature - JsonWebTokenError: invalid signature
+    at C:\Users\mohd.soyab\Desktop\urlShortner\node_modules\jsonwebtoken\verify.js:171:19
+    at getSecret (C:\Users\mohd.soyab\Desktop\urlShortner\node_modules\jsonwebtoken\verify.js:97:14)
+    at module.exports [as verify] (C:\Users\mohd.soyab\Desktop\urlShortner\node_modules\jsonwebtoken\verify.js:101:10)
+    at authService.verifyToken (C:\Users\mohd.soyab\Desktop\urlShortner\src\service\authService.js:22:16)
+    at exports.authenticate (C:\Users\mohd.soyab\Desktop\urlShortner\src\middleware\userAuthentication.js:13:26)
+    at Layer.handle [as handle_request] (C:\Users\mohd.soyab\Desktop\urlShortner\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\mohd.soyab\Desktop\urlShortner\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\mohd.soyab\Desktop\urlShortner\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\mohd.soyab\Desktop\urlShortner\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\mohd.soyab\Desktop\urlShortner\node_modules\express\lib\router\index.js:280:10)
+10:31:15 PM-invalid signature - JsonWebTokenError: invalid signature
+    at C:\Users\mohd.soyab\Desktop\urlShortner\node_modules\jsonwebtoken\verify.js:171:19
+    at getSecret (C:\Users\mohd.soyab\Desktop\urlShortner\node_modules\jsonwebtoken\verify.js:97:14)
+    at module.exports [as verify] (C:\Users\mohd.soyab\Desktop\urlShortner\node_modules\jsonwebtoken\verify.js:101:10)
+    at authService.verifyToken (C:\Users\mohd.soyab\Desktop\urlShortner\src\service\authService.js:22:16)
+    at exports.authenticate (C:\Users\mohd.soyab\Desktop\urlShortner\src\middleware\userAuthentication.js:13:26)
+    at Layer.handle [as handle_request] (C:\Users\mohd.soyab\Desktop\urlShortner\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\mohd.soyab\Desktop\urlShortner\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\mohd.soyab\Desktop\urlShortner\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\mohd.soyab\Desktop\urlShortner\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\mohd.soyab\Desktop\urlShortner\node_modules\express\lib\router\index.js:280:10)
+10:37:43 PM-Incorrect emailId or password - Error: Incorrect emailId or password
+    at userService.getUser (C:\Users\mohd.soyab\Desktop\urlShortner\src\service\userService.js:27:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async C:\Users\mohd.soyab\Desktop\urlShortner\src\routes\userRouter.js:39:21
+10:39:30 PM-Email must be type of @gmail.com - Error: Email must be type of @gmail.com
+    at userService.saveUser (C:\Users\mohd.soyab\Desktop\urlShortner\src\service\userService.js:10:21)
+    at C:\Users\mohd.soyab\Desktop\urlShortner\src\routes\userRouter.js:10:27
+    at Layer.handle [as handle_request] (C:\Users\mohd.soyab\Desktop\urlShortner\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\mohd.soyab\Desktop\urlShortner\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\mohd.soyab\Desktop\urlShortner\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\mohd.soyab\Desktop\urlShortner\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\mohd.soyab\Desktop\urlShortner\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\mohd.soyab\Desktop\urlShortner\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\mohd.soyab\Desktop\urlShortner\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\mohd.soyab\Desktop\urlShortner\node_modules\express\lib\router\index.js:175:3)

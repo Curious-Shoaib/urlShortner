@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <style>
+          form,p{
+    text-align: center;
+    margin: 10px;
+  }
+    </style>
+</head>
+<body style="background-color: rgb(198, 247, 212);">
+<h1 style="text-align: center;">Welcome to URL shortner.</h1> <br>
+<% if (locals.err) { %>
+    <h3 style= "text-align: center; color: rgba(255, 0, 0, 0.838);"><%= err.message %></h3>
+<% } %>
+<% if (!locals.err) { %>
+    <h3 style="text-align: center;">Please Log in to continue.</h3>
+<% } %>
+<div class="login">
+    <form id="login" action="/user/login" method="post">
+
+        <label for="email"><b>Email</b></label><br>
+        <input type="text" name="email" id="Uname" placeholder="example.demo@mail.com" required>
+        <br><br>
+        <label for="password"><b>Enter password</b></label><br>
+        <input type="password" name="password" id="Pass" placeholder="enter password" required>
+        <br><br>
+        <button name="log" id="log" style="color: rgb(32, 32, 214);">Log in here</button>
+    </form>
+</div>
+<p>Not registered? Register <a href="/user/signup">here. </a> </p>
+</body>
+</html>

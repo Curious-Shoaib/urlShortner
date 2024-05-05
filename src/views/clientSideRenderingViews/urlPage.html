@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>This is urlPage</h2>
+    <form id="urlForm" action="">
+        <label for="userUrl">Enter your URL.</label>
+        <input type="text" id="userUrl" required>
+        <button id="btn">Generate</button>
+    </form>
+    <li id="shortURLs"></li>
+</body>
+<script>
+    const form=document.getElementById('urlForm');
+    form.addEventListener('submit' ,async(e)=>{
+        e.preventDefault();
+        const userUrl=document.getElementById('userUrl').value;
+        const list=document.getElementById('shortURLs');
+        const apiUrl = new URL('http://localhost:1050/url');
+        
+        apiUrl.searchParams.append('url', userUrl);
+        console.log("API new URL appended - - - ",apiUrl);
+        const response=await fetch(apiUrl.toString(),{
+            method: 'POST',
+            headers: {
+                'Access-Control-Allow-Origin' : '*',
+                'Access-Control-Allow-Methods':'GET,PUT,POST',   
+                'Content-Type': 'application/json' // Set content type as JSON
+            }
+        });
+        const subList=document.createElement('li');
+        subList.innerText=response.json().shortedUrl;
+        list.appendChild(subList);
+        
+    });
+</script>
+</html>

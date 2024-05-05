@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+</head>
+<body style="background-color: rgb(198, 247, 212);">
+<h1 style="text-align: center;" >Please register to use.</h1> <br>
+<% if (locals.err) { %>
+    <h3 style="color: red;"><%= err.message %></h3>
+<% } %>
+<form name="loginForm" action="/user/signup" method="post" style="text-align: center;">
+<label>First name </label><br>
+<input type="text" name="firstName" placeholder="first name" required><br><br>
+
+<label for="lname">Last name</label><br>
+<input type="text" name="lastName" placeholder="last name" required><br><br>
+
+<label for="email">Email</label><br>
+<input type="text" name="email" placeholder="email ends with .mail" required><br><br>
+
+<label for="password">Enter password</label><br>
+<input type="password" name="password" placeholder="password" required><br><br>
+<label for="role">User role</label><br>
+<input type="text" name="role" placeholder="NORMAL, ADMIN etc" required><br><br>
+<button type="submit" style="color: blue;">Sign up</button>
+</form>
+<p style="text-align: center;">Already a user? <a href="/user/login" style="color: rgb(65, 65, 247);">Sign In</a></p>
+</body>
+</html>
