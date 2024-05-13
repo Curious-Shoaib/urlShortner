@@ -1,5 +1,5 @@
 const jwt=require('jsonwebtoken');
-const secret= process.env.JWT_SECRET_KEY || 'shoaibCodes@14';                  // must be kept in secure place, anyone can sign and verify token with it
+const secret= process.env.JWT_SECRET_KEY || 'Codes@14';                  // must be kept in secure place, anyone can sign and verify token with it
 
 const authService={
 };
